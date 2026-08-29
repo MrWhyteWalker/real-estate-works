@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Interface Hub | Frontend Portfolio</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-base: #0B0C10;
+            --bg-panel: #12141C;
+            --accent-gold: #C5A880;
+            --text-primary: #F4F5F6;
+            --text-secondary: #8E929A;
+            --sans: 'Plus Jakarta Sans', sans-serif;
+            --display: 'Syne', sans-serif;
+            --curve: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: var(--sans);
+            line-height: 1.6;
+            padding: 100px 0;
+        }
+
+        .hub-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Editorial Header */
+        header {
+            margin-bottom: 80px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 40px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(197, 168, 128, 0.1);
+            color: var(--accent-gold);
+            padding: 6px 14px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-family: var(--display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+
+        /* Showcase Grid Layout */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .showcase-card {
+            background: var(--bg-panel);
+            border: 1px solid rgba(255,255,255,0.03);
+            padding: 48px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 340px;
+            transition: all 0.5s var(--curve);
+            position: relative;
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(197, 168, 128, 0.25);
+            background: #161922;
+        }
+
+        .card-top h3 {
+            font-family: var(--display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .card-top p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tags span {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .view-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .view-link::after {
+            content: '→';
+            transition: transform 0.3s var(--curve);
+        }
+
+        .showcase-card:hover .view-link::after {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            .showcase-grid { grid-template-columns: 1fr; }
+            body { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hub-container">
+        <header>
+            <div class="badge">Production Environment</div>
+            <h1>Real Estate Interfaces</h1>
+            <p>A compilation of production frontend solutions tracking various design systems and performance matrices.</p>
+        </header>
+
+        <main class="showcase-grid">
+            <!-- Project 1: Elysian -->
+            <a href="./elysian/index.html" class="showcase-card">
+                <div class="card-top">
+                    <h3>01 / Elysian Luxury</h3>
+                    <p>Bespoke private asset advisory interface built with asymmetric design tokens and fluid custom micro-interactions.</p>
+                    <div class="tech-tags">
+                        <span>Asymmetric Grid</span>
+                        <span>Vanilla JS</span>
+                        <span>Cubic-Bezier Matrix</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="view-link">Launch Interface</span>
+                </div>
+            </a>
+
+            <!-- Project 2: Nia Homes -->
+            <a href="./nia/index.html" class="showcase-card">
+                <div class="card-top">
+                    <h3>02 / Nia Homes</h3>
+                    <p>High-converting retail broker platform engineered for volume transactions and streamlined smartphone readability profiles.</p>
+                    <div class="tech-tags">
+                        <span>Flexbox Core</span>
+                        <span>Conversion UX</span>
+                        <span>High Efficiency</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="view-link">Launch Interface</span>
+                </div>
+            </a>
+        </main>
+    </div>
+
+</body>
+</html>
