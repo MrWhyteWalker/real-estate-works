@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elysian | Capital & Asset Yields</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">ELYSIAN<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Collection</a></li>
+                <li><a href="investment.html" class="active">Investment</a></li>
+                <li><a href="agency.html">Agency</a></li>
+                <li><a href="insights.html">Insights</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="investment-hero">
+        <div class="container">
+            <h1 class="hero-title">High-Yield Wealth Vehicles</h1>
+            <p style="color:var(--text-muted); max-width: 600px;">Hedge capital against currency cycles via high-absorption luxury physical infrastructure situated in foundational regional locations.</p>
+            
+            <div class="matrix-grid">
+                <div class="matrix-card">
+                    <div class="matrix-num">14.2%</div>
+                    <div class="matrix-label">Average Net Rental Yield</div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Sustained high dollar-equivalent rental cashflows driven by corporate expat leasing models.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="matrix-num">28%</div>
+                    <div class="matrix-label">Y-o-Y Capital Gains</div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Compounding land evaluations matching prime Lekki Phase 1 corridor infrastructural vectors.</p>
+                </div>
+                <div class="matrix-card">
+                    <div class="matrix-num">₦2.4B</div>
+                    <div class="matrix-label">Assets Managed</div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Vetted, institutional-grade titles managed completely within secure asset frameworks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="calculator-section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div>
+                    <h2 style="font-family: var(--display); font-size: 2.2rem; margin-bottom: 20px;">Yield Projector</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 32px;">Model realistic capital growth trajectories across institutional-tier premium holdings based on localized operational metrics.</p>
+                </div>
+                <div class="calc-box">
+                    <div class="input-group">
+                        <label>Principal Deployment (₦)</label>
+                        <input type="number" id="calc-principal" value="500000000" step="10000000">
+                    </div>
+                    <div class="input-group">
+                        <label>Holding Period (Years)</label>
+                        <input type="number" id="calc-years" value="5" min="1" max="15">
+                    </div>
+                    <button class="calc-btn" id="run-calc">Generate Pro-Forma</button>
+                    <div class="result-display" id="calc-result">
+                        Projected Asset Value: <span id="target-value">₦0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+/* Modern Hand-Coded Design Tokens */
+:root {
+    --bg-primary: #0B0C10;
+    --bg-surface: #12141C;
+    --brand-gold: #C5A880;
+    --brand-gold-muted: rgba(197, 168, 128, 0.15);
+    --text-main: #F4F5F6;
+    --text-muted: #8E929A;
+    --sans: 'Plus Jakarta Sans', sans-serif;
+    --display: 'Syne', sans-serif;
+    --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: var(--sans);
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Sophisticated Utility Component: Custom Smooth Scroll & Selection */
+::selection {
+    background: var(--brand-gold);
+    color: var(--bg-primary);
+}
+
+/* Structural Layout System */
+.container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* 1. Header Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    transition: var(--transition);
+}
+
+header.scrolled {
+    background: rgba(11, 12, 16, 0.85);
+    padding: 10px 0;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+.logo {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.logo span { color: var(--brand-gold); }
+
+.nav-links {
+    display: flex;
+    gap: 48px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-main);
+}
+
+/* Pure CSS Underline Animation on Hover */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--brand-gold);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+.cta-nav {
+    background: transparent;
+    border: 1px solid var(--brand-gold);
+    color: var(--brand-gold);
+    padding: 12px 28px;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+}
+
+.cta-nav:hover {
+    background: var(--brand-gold);
+    color: var(--bg-primary);
+    box-shadow: 0 10px 30px rgba(197, 168, 128, 0.2);
+}
+
+/* 2. Asymmetric Hero Section */
+.hero {
+    padding: 220px 0 120px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-surface);
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 6px 16px;
+    border-radius: 100px;
+    color: var(--brand-gold);
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 28px;
+    letter-spacing: 0.5px;
+}
+
+.hero-tag span {
+    width: 6px;
+    height: 6px;
+    background: var(--brand-gold);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.hero h1 {
+    font-family: var(--display);
+    font-size: clamp(3rem, 5.5vw, 5.2rem);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 32px;
+}
+
+.hero h1 em {
+    font-style: normal;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.4);
+}
+
+.hero-desc {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    max-width: 540px;
+    margin-bottom: 48px;
+}
+
+/* Premium Floating Interaction Input Group */
+.search-engine {
+    background: var(--bg-surface);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 12px;
+    max-width: 680px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.search-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 16px;
+    border-right: 1px solid rgba(255,255,255,0.05);
+}
+
+.search-field:nth-child(2) { border-right: none; }
+
+.search-field label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.search-field select, .search-field input {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.search-engine button {
+    background: var(--brand-gold);
+    color: var(--bg-primary);
+    border: none;
+    padding: 18px 32px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-engine button:hover {
+    background: #E5C49A;
+}
+
+/* Asymmetric Visual Graphic Section */
+.hero-visual-frame {
+    position: relative;
+    width: 100%;
+    height: 580px;
+}
+
+.main-img-wrapper {
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.main-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(15%) brightness(90%);
+    transition: var(--transition);
+}
+
+.hero-visual-frame:hover .main-img-wrapper img {
+    transform: scale(1.04);
+    filter: grayscale(0%) brightness(100%);
+}
+
+/* Overlay Meta Info Block (Human Architectural Flair) */
+.img-meta-badge {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    background: var(--brand-gold);
+    color: var(--bg-primary);
+    padding: 30px;
+    max-width: 240px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.img-meta-badge p {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.img-meta-badge h4 {
+    font-family: var(--display);
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+/* 3. Portfolio Collection Grid (Human Typography Balance) */
+.collection {
+    padding: 140px 0;
+    background: #0E1016;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 80px;
+}
+
+.section-title h2 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+.section-title p {
+    color: var(--text-muted);
+    margin-top: 16px;
+    font-size: 1.05rem;
+    max-width: 480px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.portfolio-card {
+    background: var(--bg-surface);
+    border: 1px solid rgba(255,255,255,0.02);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+    transition: var(--transition);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(197, 168, 128, 0.2);
+}
+
+.card-img-container {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.portfolio-card:hover .card-img-container img {
+    transform: scale(1.05);
+}
+
+/* Subtle Location Chip */
+.loc-chip {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(11, 12, 16, 0.75);
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    letter-spacing: 0.5px;
+}
+
+.card-content {
+    padding: 32px;
+}
+
+.card-legal {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--brand-gold);
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card-content h3 {
+    font-family: var(--display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.card-specs {
+    display: flex;
+    gap: 20px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.price-value {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.arrow-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.portfolio-card:hover .arrow-icon {
+    background: var(--brand-gold);
+    color: var(--bg-primary);
+}
+
+/* Responsive Breakpoints Rules */
+@media (max-width: 1024px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 80px; }
+    .hero-visual-frame { height: 480px; }
+    .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    .container { padding: 0 24px; }
+}
+
+@media (max-width: 768px) {
+    .nav-links, .cta-nav { display: none; }
+    .search-engine { grid-template-columns: 1fr; }
+    .search-field { border-right: none; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .cards-grid { grid-template-columns: 1fr; }
+    .section-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+}
+
+/* Investment Page Styles */
+.investment-hero { padding: 200px 0 80px 0; }
+.hero-title { font-family: var(--display); font-size: clamp(2.5rem, 4.5vw, 4rem); font-weight: 800; margin-bottom: 24px; letter-spacing: -1.5px; }
+
+.matrix-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
+.matrix-card { background: var(--bg-surface); padding: 40px; border: 1px solid rgba(255,255,255,0.02); transition: var(--transition); }
+.matrix-card:hover { border-color: rgba(197, 168, 128, 0.2); transform: translateY(-4px); }
+.matrix-num { font-family: var(--display); font-size: 2.5rem; color: var(--brand-gold); margin-bottom: 8px; }
+.matrix-label { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; margin-bottom: 16px; }
+
+.calculator-section { padding: 100px 0; background: #0E1016; margin-top: 60px; }
+.calc-box { max-width: 600px; background: var(--bg-primary); padding: 48px; border: 1px solid rgba(255,255,255,0.04); }
+.input-group { margin-bottom: 24px; }
+.input-group label { display: block; font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; letter-spacing: 0.5px; }
+.input-group input { width: 100%; background: var(--bg-surface); border: 1px solid rgba(255,255,255,0.08); padding: 16px; color: var(--text-main); font-family: var(--sans); }
+.calc-btn { background: var(--brand-gold); color: var(--bg-primary); border: none; width: 100%; padding: 16px; font-weight: 600; cursor: pointer; transition: var(--transition); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+.calc-btn:hover { background: #E5C49A; }
+.result-display { margin-top: 32px; font-size: 1.1rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px; display: none; }
+.result-display span { color: var(--brand-gold); font-weight: 600; }
+
+/* Insights Page Styles */
+.insights-hero { padding: 220px 0 60px 0; }
+.editorial-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 80px; margin-top: 60px; }
+
+.featured-article { border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 48px; margin-bottom: 48px; text-decoration: none; color: inherit; display: block; }
+.article-meta { font-size: 0.75rem; text-transform: uppercase; color: var(--brand-gold); font-weight: 600; margin-bottom: 16px; letter-spacing: 1px; }
+.featured-article h2 { font-family: var(--display); font-size: 2.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 16px; letter-spacing: -0.5px; transition: var(--transition); }
+.featured-article:hover h2 { color: var(--brand-gold); }
+
+.sidebar-list { list-style: none; }
+.sidebar-item { padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.03); }
+.sidebar-item:first-child { padding-top: 0; }
+.sidebar-title { font-weight: 500; margin-top: 8px; font-size: 1rem; cursor: pointer; transition: var(--transition); }
+.sidebar-title:hover { color: var(--brand-gold); }
+
+/* Agency Page Styles */
+.agency-hero { padding: 220px 0 100px 0; }
+.split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: flex-start; }
+.title-block h1 { font-family: var(--display); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 30px; letter-spacing: -2px; }
+
+.narrative-block p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 24px; }
+.vetting-list { list-style: none; margin-top: 48px; }
+.vetting-item { padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.05); display: grid; grid-template-columns: 0.4fr 1.6fr; gap: 20px; }
+.vetting-step { font-family: var(--display); color: var(--brand-gold); font-weight: 700; font-size: 1.1rem; }
+.vetting-title { font-weight: 600; margin-bottom: 6px; font-size: 1.05rem; }

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elysian | Curated Prime Real Estate Nigeria</title>
+    <!-- Premium Typography Pairing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 1. Header Navigation -->
+    <header id="main-header">
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">ELYSIAN<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Collection</a></li>
+                <li><a href="investment.html">Investment</a></li>
+                <li><a href="#">Agency</a></li>
+                <li><a href="#">Insights</a></li>
+            </ul>
+            <button class="cta-nav">Inquire Asset</button>
+        </div>
+    </header>
+
+    <!-- 2. Asymmetric Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text-side">
+                <div class="hero-tag"><span></span>Architectural Integrity</div>
+                <h1>We curate spaces <em>without</em> compromise.</h1>
+                <p class="hero-desc">An elite collection of high-yielding architectural assets across Nigeria's ultra-prime locations. Verified titles, uncompromised craft.</p>
+                
+                <!-- Dynamic Input Group Block -->
+                <div class="search-engine">
+                    <div class="search-field">
+                        <label for="loc-select">Location</label>
+                        <select id="loc-select" aria-label="Location">
+                            <option value="all">All Locations</option>
+                            <option value="lekki">Lekki Phase 1</option>
+                            <option value="maitama">Maitama, Abuja</option>
+                            <option value="eko">Eko Atlantic</option>
+                        </select>
+                    </div>
+                    <div class="search-field">
+                        <label for="type-select">Asset Class</label>
+                        <select name="asset-type" id="type-select" aria-label="Asset Class">
+                            <option value="all">All Typologies</option>
+                            <option value="villa">Detached Villa</option>
+                            <option value="penthouse">Penthouse</option>
+                        </select>
+                    </div>
+                    <button id="filter-trigger">Explore Board</button>
+                </div>
+            </div>
+
+            <div class="hero-visual-frame">
+                <div class="main-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Elysian Modern Architecture">
+                </div>
+                <div class="img-meta-badge">
+                    <p>Current Flagship</p>
+                    <h4>The Obsidian Suite, Waterfront Lekki</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Portfolio Collection Grid -->
+    <section class="collection">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">
+                    <h2>Available Holdings</h2>
+                    <p>Rigorously vetted structures with fully processed Certificates of Occupancy (C of O).</p>
+                </div>
+            </div>
+
+            <div class="cards-grid" id="holdings-grid">
+                <!-- Card 1 -->
+                <a href="#" class="portfolio-card" data-location="lekki" data-type="villa">
+                    <div class="card-img-container">
+                        <span class="loc-chip">Lekki Phase 1, Lagos</span>
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Lekki Villa">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-legal">Governor's Consent / C of O</div>
+                        <h3>The Cavalli Pavilion</h3>
+                        <div class="card-specs">
+                            <span>5 Beds</span>
+                            <span>•</span>
+                            <span>6 Baths</span>
+                            <span>•</span>
+                            <span>Cinema Room</span>
+                        </div>
+                        <div class="card-footer">
+                            <div>
+                                <p class="price-label">Investment Value</p>
+                                <p class="price-value">₦850,000,000</p>
+                            </div>
+                            <div class="arrow-icon">→</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="#" class="portfolio-card" data-location="maitama" data-type="penthouse">
+                    <div class="card-img-container">
+                        <span class="loc-chip">Maitama, Abuja</span>
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" alt="Maitama Penthouse">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-legal">FCDO CofO</div>
+                        <h3>Aura Monolith Penthouse</h3>
+                        <div class="card-specs">
+                            <span>4 Beds</span>
+                            <span>•</span>
+                            <span>5 Baths</span>
+                            <span>•</span>
+                            <span>Private Helipad</span>
+                        </div>
+                        <div class="card-footer">
+                            <div>
+                                <p class="price-label">Investment Value</p>
+                                <p class="price-value">₦1,200,000,000</p>
+                            </div>
+                            <div class="arrow-icon">→</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="#" class="portfolio-card" data-location="eko" data-type="penthouse">
+                    <div class="card-img-container">
+                        <span class="loc-chip">Eko Atlantic City</span>
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" alt="Eko Atlantic Tower">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-legal">Freezone Global Title</div>
+                        <h3>The Luminary Highrise</h3>
+                        <div class="card-specs">
+                            <span>3 Beds</span>
+                            <span>•</span>
+                            <span>4 Baths</span>
+                            <span>•</span>
+                            <span>Ocean Front View</span>
+                        </div>
+                        <div class="card-footer">
+                            <div>
+                                <p class="price-label">Investment Value</p>
+                                <p class="price-value">₦950,000,000</p>
+                            </div>
+                            <div class="arrow-icon">→</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
